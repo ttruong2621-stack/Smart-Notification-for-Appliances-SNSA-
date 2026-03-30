@@ -2,7 +2,13 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from datetime import datetime
 
-app = FastAPI()
+from .core.settings import settings
+
+app = FastAPI(
+    title=settings.app_name,
+    description="Backend API for Smart Notification System Appliance(SNSA)",
+    version=settings.app_version,
+)
 
 
 class EventMessage(BaseModel):
