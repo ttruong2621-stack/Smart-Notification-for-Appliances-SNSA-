@@ -21,5 +21,23 @@ async function getLatestEvent(){
     }
 }
 
+async function sendTestEvent(){
+    const eventMessage = {
+        deviceId: "snsa-001",
+        event: "sound_detected",
+        soundName: "Washer Done",
+        timestamp: new Date().toISOString()
+    };
+
+    await fetch(`${BACKEND_URL}/event`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(eventMessage)
+        
+    });
+}
+
 //call every 2 seconds
 setInterval(getLatestEvent, 2000);
