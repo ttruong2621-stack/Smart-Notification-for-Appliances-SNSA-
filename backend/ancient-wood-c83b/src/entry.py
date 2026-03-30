@@ -1,4 +1,5 @@
 from workers import Response, WorkerEntrypoint
+from urllib.parse import urlparse
 import json
 
 # fake database to storage the latest event send by SNSA
@@ -12,7 +13,7 @@ class Default(WorkerEntrypoint):
         # extract the request into url, method and path
         url = request.url
         method = request.method
-        path = url.split(".workers.dev")[-1]
+        path = urlparse(url).path
 
         if path == "/event" and method == "POST":
             # expect the request body to be a json object and store it in the latest_event variable
