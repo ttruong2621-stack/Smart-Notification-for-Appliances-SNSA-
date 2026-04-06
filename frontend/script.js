@@ -1,6 +1,6 @@
 //script to handle UI update
 
-const BACKEND_URL = " https://ancient-wood-c83b.snsa-app.workers.dev";
+const BACKEND_URL = "https://ancient-wood-c83b.snsa-app.workers.dev";
 
 async function getLatestEvent(){
     try{const response = await fetch(`${BACKEND_URL}/latest-event`);
