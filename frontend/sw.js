@@ -1,4 +1,4 @@
-const CACHE_NAME = 'snsa-v4';
+const CACHE_NAME = 'snsa-v5';
 const URLS_TO_CACHE = ['/', '/index.html', '/manifest.json'];
 
 self.addEventListener('install', (event) => {
